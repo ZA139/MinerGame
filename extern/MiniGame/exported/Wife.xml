@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: Wife.xml-->
+<behavior name="Wife" agenttype="Wife" fsm="true" version="5">
+  <node class="FSM" id="-1">
+    <property initialid="1" />
+    <node class="State" id="1">
+      <property IsEndState="false" />
+      <property Method="Self.Wife::DoHomeWork()" />
+      <attachment class="Transition" id="3" flag="transition">
+        <property Operator="Equal" />
+        <property Opl="bool Self.Wife::isWannaGotoBathRoom" />
+        <property Opr2="const bool true" />
+        <property TargetFSMNodeId="2" />
+      </attachment>
+    </node>
+    <node class="State" id="2">
+      <property IsEndState="false" />
+      <property Method="Self.Wife::Peeing()" />
+      <attachment class="AlwaysTransition" id="4" flag="transition">
+        <property TargetFSMNodeId="1" />
+        <property TransitionPhase="ETP_Always" />
+      </attachment>
+    </node>
+  </node>
+</behavior>

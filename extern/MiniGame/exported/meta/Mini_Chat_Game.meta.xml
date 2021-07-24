@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<agents version="1" signature="2680877555">
+  <agent type="AgentWithMessage" base="behaviac::Agent" signature="3802280444">
+    <properties>
+      <property name="isHandlingMessage" type="bool" member="false" static="false" defaultvalue="false" />
+    </properties>
+  </agent>
+  <agent type="Miner" base="AgentWithMessage" signature="1259672074">
+    <properties>
+      <property name="GoldCarried" type="uint" member="false" static="false" defaultvalue="0" />
+      <property name="isHandlingMessage" type="bool" member="false" static="false" defaultvalue="false" />
+      <property name="ThirstyTimer" type="uint" member="false" static="false" defaultvalue="0" />
+      <property name="TodayGainedGold" type="uint" member="false" static="false" defaultvalue="0" />
+      <property name="TotalMoney" type="uint" member="false" static="false" defaultvalue="0" />
+    </properties>
+  </agent>
+  <agent type="Wife" base="AgentWithMessage" signature="4234829567">
+    <properties>
+      <property name="isHandlingMessage" type="bool" member="false" static="false" defaultvalue="false" />
+      <property name="isWannaGotoBathRoom" type="bool" member="false" static="false" defaultvalue="false" />
+    </properties>
+  </agent>
+</agents>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Behavior Version="5" NoError="true">
+  <Node Class="Behaviac.Design.Nodes.Behavior" AgentType="Wife" Domains="" Enable="true" HasOwnPrefabData="false" Id="-1" PrefabName="" PrefabNodeId="-1">
+    <Comment Background="NoColor" Text="" />
+    <DescriptorRefs value="0:" />
+    <Attachment Class="PluginBehaviac.Events.StartCondition" Enable="true" Id="0" PrefabAttachmentId="-1" TargetFSMNodeId="1" />
+    <FSMNodes ScreenLocationX="0" ScreenLocationY="0">
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="1" IsEndState="false" Method="Self.Wife::DoHomeWork()" Name="做家务" PrefabName="" PrefabNodeId="-1" ScreenLocationX="172" ScreenLocationY="-1.5">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.TransitionCondition" Effectors="0:" Enable="true" Id="3" Operator="Equal" Opl="bool Self.Wife::isWannaGotoBathRoom" Opr1="&quot;&quot;" Opr2="const bool true" PrefabAttachmentId="-1" TargetFSMNodeId="2" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="2" IsEndState="false" Method="Self.Wife::Peeing()" Name="上厕所" PrefabName="" PrefabNodeId="-1" ScreenLocationX="429.5" ScreenLocationY="-4.25">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.AlwaysTransition" Enable="true" Id="4" PrefabAttachmentId="-1" TargetFSMNodeId="1" TransitionPhase="ETP_Always" />
+      </Node>
+    </FSMNodes>
+  </Node>
+</Behavior>

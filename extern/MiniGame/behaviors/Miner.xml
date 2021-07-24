@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Behavior Version="5" NoError="true">
+  <Node Class="Behaviac.Design.Nodes.Behavior" AgentType="Miner" Domains="" Enable="true" HasOwnPrefabData="false" Id="-1" PrefabName="" PrefabNodeId="-1">
+    <Comment Background="NoColor" Text="" />
+    <DescriptorRefs value="0:" />
+    <Attachment Class="PluginBehaviac.Events.StartCondition" Enable="true" Id="0" PrefabAttachmentId="-1" TargetFSMNodeId="1" />
+    <FSMNodes ScreenLocationX="0" ScreenLocationY="0">
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="1" IsEndState="false" Method="Self.Miner::EnterMineAndDigForNugget()" Name="挖矿" PrefabName="" PrefabNodeId="-1" ScreenLocationX="161" ScreenLocationY="15.75">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.TransitionCondition" Effectors="0:" Enable="true" Id="2" Operator="Greater" Opl="uint Self.Miner::ThirstyTimer" Opr1="&quot;&quot;" Opr2="const uint 100" PrefabAttachmentId="-1" TargetFSMNodeId="3" />
+        <Attachment Class="PluginBehaviac.Events.TransitionCondition" Effectors="0:" Enable="true" Id="5" Operator="Greater" Opl="uint Self.Miner::GoldCarried" Opr1="&quot;&quot;" Opr2="const uint 13" PrefabAttachmentId="-1" TargetFSMNodeId="6" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="3" IsEndState="false" Method="Self.Miner::GoToBarDrinkSomeWhiskey()" Name="酒吧喝酒" PrefabName="" PrefabNodeId="-1" ScreenLocationX="381.0715" ScreenLocationY="-92.76785">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.AlwaysTransition" Enable="true" Id="4" PrefabAttachmentId="-1" TargetFSMNodeId="1" TransitionPhase="ETP_Always" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="6" IsEndState="false" Method="Self.Miner::GoToBank()" Name="银行存钱" PrefabName="" PrefabNodeId="-1" ScreenLocationX="377.5714" ScreenLocationY="44.08929">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.TransitionCondition" Effectors="0:" Enable="true" Id="7" Operator="GreaterEqual" Opl="uint Self.Miner::TodayGainedGold" Opr1="&quot;&quot;" Opr2="const uint 30" PrefabAttachmentId="-1" TargetFSMNodeId="8" />
+        <Attachment Class="PluginBehaviac.Events.AlwaysTransition" Enable="true" Id="9" PrefabAttachmentId="-1" TargetFSMNodeId="1" TransitionPhase="ETP_Always" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="8" IsEndState="false" Method="Self.Miner::Rest()" Name="回家休息" PrefabName="" PrefabNodeId="-1" ScreenLocationX="149.1429" ScreenLocationY="151.375">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.AlwaysTransition" Enable="true" Id="10" PrefabAttachmentId="-1" TargetFSMNodeId="1" TransitionPhase="ETP_Always" />
+      </Node>
+    </FSMNodes>
+  </Node>
+</Behavior>

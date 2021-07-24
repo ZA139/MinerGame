@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: Miner.xml-->
+<behavior name="Miner" agenttype="Miner" fsm="true" version="5">
+  <node class="FSM" id="-1">
+    <property initialid="1" />
+    <node class="State" id="1">
+      <property IsEndState="false" />
+      <property Method="Self.Miner::EnterMineAndDigForNugget()" />
+      <attachment class="Transition" id="2" flag="transition">
+        <property Operator="Greater" />
+        <property Opl="uint Self.Miner::ThirstyTimer" />
+        <property Opr2="const uint 100" />
+        <property TargetFSMNodeId="3" />
+      </attachment>
+      <attachment class="Transition" id="5" flag="transition">
+        <property Operator="Greater" />
+        <property Opl="uint Self.Miner::GoldCarried" />
+        <property Opr2="const uint 13" />
+        <property TargetFSMNodeId="6" />
+      </attachment>
+    </node>
+    <node class="State" id="3">
+      <property IsEndState="false" />
+      <property Method="Self.Miner::GoToBarDrinkSomeWhiskey()" />
+      <attachment class="AlwaysTransition" id="4" flag="transition">
+        <property TargetFSMNodeId="1" />
+        <property TransitionPhase="ETP_Always" />
+      </attachment>
+    </node>
+    <node class="State" id="6">
+      <property IsEndState="false" />
+      <property Method="Self.Miner::GoToBank()" />
+      <attachment class="Transition" id="7" flag="transition">
+        <property Operator="GreaterEqual" />
+        <property Opl="uint Self.Miner::TodayGainedGold" />
+        <property Opr2="const uint 30" />
+        <property TargetFSMNodeId="8" />
+      </attachment>
+      <attachment class="AlwaysTransition" id="9" flag="transition">
+        <property TargetFSMNodeId="1" />
+        <property TransitionPhase="ETP_Always" />
+      </attachment>
+    </node>
+    <node class="State" id="8">
+      <property IsEndState="false" />
+      <property Method="Self.Miner::Rest()" />
+      <attachment class="AlwaysTransition" id="10" flag="transition">
+        <property TargetFSMNodeId="1" />
+        <property TransitionPhase="ETP_Always" />
+      </attachment>
+    </node>
+  </node>
+</behavior>

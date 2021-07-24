@@ -1,0 +1,13 @@
+[behaviac][00000][thread 30659]CREATED ON 2021-07-24
+
+[behaviac][00000][thread 30659][16:30:42][WARN][meta] The types/internal/behaviac_agent_meta.cpp should be exported from the behaviac designer, and then integrated into your project!
+[behaviac][00001][thread 30659][16:30:42][INFO]Version: behaviac_gcc-linux_3.6.39_64_ndebug_RELEASE
+[behaviac][00002][thread 30659][16:30:42][INFO]Config::IsDesktopPlatform true
+[behaviac][00003][thread 30659][16:30:42][INFO]Config::IsProfiling false
+[behaviac][00004][thread 30659][16:30:42][INFO]Config::IsLogging false
+[behaviac][00005][thread 30659][16:30:42][INFO]Config::IsLoggingFlush true
+[behaviac][00006][thread 30659][16:30:42][INFO]Config::IsSocketing false
+[behaviac][00007][thread 30659][16:30:42][INFO]Config::IsSocketBlocking false
+[behaviac][00008][thread 30659][16:30:42][INFO]Config::IsHotReload true
+[behaviac][00009][thread 30659][16:30:42][INFO]Config::SocketPort 60636
+[behaviac][00010][thread 30659][16:30:42][INFO]'WorkspaceExportPath' is '/data/charlesqliu/MiniMiner/extern/MiniGame/exported/'
