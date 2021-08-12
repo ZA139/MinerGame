@@ -52,12 +52,6 @@ void MessageMgr::HandleMessageQueue()
 				nowAgentQueue->remove(now);
 				now = temp;
 			}
-			else if(message->delay>0){
-				message->delay--;
-				#ifdef __MSG_DEBUG
-				cerr<<"MessageType:"<<message->type<<"  delay:"<<message->delay<<endl;
-				#endif
-			}
 			else {
 				#ifdef __MSG_DEBUG
 				cerr<<"过期消息"<<endl;
@@ -66,6 +60,7 @@ void MessageMgr::HandleMessageQueue()
 				nowAgentQueue->remove(now);
 				now = temp;
 			}
+			message->delay--;
 		}
 		it++;
 	}
